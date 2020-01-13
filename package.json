@@ -1,0 +1,28 @@
+{
+  "name": "iplaymusic-ferniss",
+  "version": "1.0.0",
+  "description": "music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rts-cmk-wuhf02/iplaymusic-Ferniss.git"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "Mathias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rts-cmk-wuhf02/iplaymusic-Ferniss/issues"
+  },
+  "homepage": "https://github.com/rts-cmk-wuhf02/iplaymusic-Ferniss#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "gulp": "^4.0.2",
+    "gulp-ejs": "^5.0.0"
+  }
+}
