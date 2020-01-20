@@ -1,3 +1,10 @@
+.section__h1 {
+  background: -webkit-radial-gradient(#FF6A00, #EE0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 5%;
+  font-size: 2em; }
+
 .section__p-wrapper {
   display: flex;
   justify-content: space-between; }
