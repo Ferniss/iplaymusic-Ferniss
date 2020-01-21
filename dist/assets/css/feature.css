@@ -2,11 +2,11 @@
   background: -webkit-radial-gradient(#FF6A00, #EE0979);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: 5%;
+  margin-left: 1%;
   font-size: 2em; }
 
 .section__img {
-  width: 98%;
+  width: 325px;
   height: 450px;
   border-radius: 10px; }
 

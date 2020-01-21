@@ -9,6 +9,16 @@
   justify-content: space-between;
   margin-top: 10px; }
 
+.categories-show {
+  width: 325px;
+  height: 54px;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; }
+
 .categories-text {
   color: #FFFFFF;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

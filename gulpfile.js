@@ -69,10 +69,10 @@ gulp.task("dev", function(done){
     done();
 });
 gulp.task("build", function(done) {
-    html();
-    scss();
-    javascript();
-    json();
-    images();
+    html(done);
+    scss(done);
+    javascript(done);
+    json(done);
+    images(done);
     done();
 });
