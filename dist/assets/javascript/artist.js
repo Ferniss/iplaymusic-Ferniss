@@ -15,7 +15,7 @@ fetch('https://accounts.spotify.com/api/token', {
   return response.json();
 }).then(function (data) {
   var accessToken = data.access_token;
-  fetch('https://api.spotify.com/v1/browse/featured-playlists', {
+  fetch('https://api.spotify.com/v1/artists', {
     method: "GET",
     headers: {
       "Authorization": "Bearer " + accessToken

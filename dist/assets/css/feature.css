@@ -2,15 +2,20 @@
   background: -webkit-radial-gradient(#FF6A00, #EE0979);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: 1%;
+  margin-left: 5%;
   font-size: 2em; }
 
 .section__img {
-  width: 325px;
+  width: 22.3em;
   height: 450px;
   border-radius: 10px; }
 
-.img__wrapper2 {
+.section__img {
+  width: 22.3em;
+  height: 450px;
+  border-radius: 10px; }
+
+.img__wrapper {
   display: flex;
   justify-content: center;
   position: relative; }
@@ -18,14 +23,14 @@
 .img__h1 {
   width: 60%;
   position: absolute;
-  bottom: 20%;
+  bottom: 25%;
   left: 1.5%;
   font-size: bold 35px;
   color: white; }
 
 .img__h3 {
   position: absolute;
-  bottom: 2.5%;
+  bottom: 10%;
   left: 1.5%;
   font-size: 20px;
   color: white; }
