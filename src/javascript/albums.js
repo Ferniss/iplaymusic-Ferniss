@@ -48,6 +48,9 @@ fetch('https://accounts.spotify.com/api/token', {
             const placer2 = document.querySelector('.section__wrapper-album');
             const clone = templatealbums.content.cloneNode(true)
               clone.querySelector('.section__img-album').src = elementt.images[0].url
+              clone.querySelector('.section__div-h3-album').innerText = elementt.name
+              clone.querySelector('.section__div-p-album').innerText = elementt.artists[0].name
+              clone.querySelector('.section__div-p2-album').innerText = elementt.total_tracks
               placer2.appendChild(clone)
   });
 
