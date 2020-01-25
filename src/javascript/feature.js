@@ -24,84 +24,16 @@ fetch('https://accounts.spotify.com/api/token', {
         .then(res=> res.json())
         .then(req=>{
           console.log(req.playlists.items) 
-          console.log(req.playlists.items[0].name) 
-          const featuredmain = document.querySelector('.featuredmain')
-          
-          featuredmain.innerHTML = `
-          <section class="main_section">
-          <h1 class="section__h1">Featured</h1>
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[0].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[0].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-      </figure>
+          req.playlists.items.forEach(element => {
+              console.log(element.images)
+              const templatefeature = document.querySelector('#template-feature');
+              const placer = document.querySelector('.main_section');
+              const clone = templatefeature.content.cloneNode(true)
 
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[1].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[1].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-      </figure>
+                clone.querySelector('.section__img').src = element.images[0].url
 
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[2].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[2].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-        </figure>
+                placer.appendChild(clone)
+            
+          });
 
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[3].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[3].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[4].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[4].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[5].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[5].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[6].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[6].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[7].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[7].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[8].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[8].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[9].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[9].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-    
-          
-      </section>
-          `
-
-               })
-           });
-    
-        
-  
+        })})

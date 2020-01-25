@@ -15,7 +15,7 @@ fetch('https://accounts.spotify.com/api/token', {
   return response.json();
 }).then(function (data) {
   var accessToken = data.access_token;
-  fetch('https://api.spotify.com/v1/artists', {
+  fetch('https://api.spotify.com/v1/artists?ids=0oSGxfWSnnOXhD2fKuz2Gy%2C3dBVyJ7JuOMt4GE9607Qin%2C7dGJo4pcD2V6oG8kP0tJRR', {
     method: "GET",
     headers: {
       "Authorization": "Bearer " + accessToken
@@ -23,9 +23,68 @@ fetch('https://accounts.spotify.com/api/token', {
   }).then(function (res) {
     return res.json();
   }).then(function (req) {
-    console.log(req.playlists.items);
-    console.log(req.playlists.items[0].name);
-    var featuredmain = document.querySelector('.featuredmain');
-    featuredmain.innerHTML = "\n          <section class=\"main_section\">\n          <h1 class=\"section__h1\">Featured</h1>\n      <figure class=\"img__wrapper\">\n      <img class=\"section__img\" src=\"".concat(req.playlists.items[0].images[0].url, "\" alt=\"\">\n          <h1 class=\"img__h1\">").concat(req.playlists.items[0].name, "</h1>\n          <h3 class=\"img__h3\">Soundtrack</h3>\n      </figure>\n\n      <figure class=\"img__wrapper\">\n      <img class=\"section__img\" src=\"").concat(req.playlists.items[1].images[0].url, "\" alt=\"\">\n          <h1 class=\"img__h1\">").concat(req.playlists.items[1].name, "</h1>\n          <h3 class=\"img__h3\">Soundtrack</h3>\n      </figure>\n\n      <figure class=\"img__wrapper\">\n      <img class=\"section__img\" src=\"").concat(req.playlists.items[2].images[0].url, "\" alt=\"\">\n          <h1 class=\"img__h1\">").concat(req.playlists.items[2].name, "</h1>\n          <h3 class=\"img__h3\">Soundtrack</h3>\n        </figure>\n\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[3].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[3].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[4].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[4].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[5].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[5].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[6].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[6].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[7].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[7].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[8].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[8].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n\n          </figure>\n          <figure class=\"img__wrapper\">\n          <img class=\"section__img\" src=\"").concat(req.playlists.items[9].images[0].url, "\" alt=\"\">\n              <h1 class=\"img__h1\">").concat(req.playlists.items[9].name, "</h1>\n              <h3 class=\"img__h3\">Soundtrack</h3>\n          </figure>\n    \n          \n      </section>\n          ");
+    console.log(req.artists);
+    req.artists.forEach(function (element) {
+      console.log(element.images);
+      var templatefeature = document.querySelector('#template-feature');
+      var placer = document.querySelector('.img__wrapper');
+      var clone = templatefeature.content.cloneNode(true);
+      clone.querySelector('.section__img').src = element.images[0].url;
+      placer.appendChild(clone);
+    }); //     .then(res=> res.json())
+    //     .then(req=>{
+    //       console.log(req.artists) 
+    //     //   console.log(req.playlists.items[0].name) 
+    //       const artist = document.querySelector('.artist')
+    //       artist.innerHTML = 
+    //       `<section class="main_section">
+    //       <h1 class="section__h1">All Artist</h1>
+    //       <div class="section__p-wrapper">
+    //       <p class="section__p">artist of the month</p> 
+    //       <p class="section__p2"> View all</p>
+    //   </div>
+    //   <figure class="img__wrapper">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <h3 class="figure__h3">September</h3>
+    //       <h2 class="figure__h2">Jonas Brothers</h2>
+    //   </figure>
+    //   <div class="section__p-wrapper">
+    //       <p class="section__p">artist of the month</p> 
+    //       <p class="section__p2"> View all</p>
+    //   </div>
+    //   </section>
+    //   <section class="img__wrapper2">
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>Aesop Rock</figcaption>
+    //       </figure>
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>ONE OK RO.</figcaption>
+    //       </figure>
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>PnB Rock</figcaption>
+    //       </figure>
+    //   </section>
+    //   <section>
+    //       <h1>Top Artist By Country</h1>
+    //       <figure class="div__wrapper">
+    //           <div class="green">
+    //               <h2 class="green__div-h2">Top 50</h2>
+    //               <br>
+    //               <p class="div-p">us-uk</p>
+    //           </div>
+    //           <div class="blue">
+    //               <h2 class="blue__div-h2">Top 50</h2>
+    //               <p class="div-p">Global</p class="div-p">
+    //           </div>
+    //       </figure>
+    //   </section>
+    //       `
+    //            })
+    //        });
   });
 });

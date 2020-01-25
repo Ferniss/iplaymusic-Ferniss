@@ -15,7 +15,7 @@ fetch('https://accounts.spotify.com/api/token', {
     )
     .then(data=>{
         let accessToken = data.access_token
-        fetch('https://api.spotify.com/v1/artists',{
+        fetch('https://api.spotify.com/v1/artists?ids=0oSGxfWSnnOXhD2fKuz2Gy%2C3dBVyJ7JuOMt4GE9607Qin%2C7dGJo4pcD2V6oG8kP0tJRR',{
             method: "GET",
             headers: {
                 "Authorization" : "Bearer " + accessToken
@@ -23,82 +23,81 @@ fetch('https://accounts.spotify.com/api/token', {
         })
         .then(res=> res.json())
         .then(req=>{
-          console.log(req.playlists.items) 
-          console.log(req.playlists.items[0].name) 
-          const featuredmain = document.querySelector('.featuredmain')
+          console.log(req.artists) 
+          req.artists.forEach(element => {
+              console.log(element.images)
+              const templatefeature = document.querySelector('#template-feature');
+              const placer = document.querySelector('.img__wrapper');
+              const clone = templatefeature.content.cloneNode(true)
+                clone.querySelector('.section__img').src = element.images[0].url
+                placer.appendChild(clone)
+            
+            
+          });
+    //     .then(res=> res.json())
+    //     .then(req=>{
+    //       console.log(req.artists) 
+    //     //   console.log(req.playlists.items[0].name) 
+    //       const artist = document.querySelector('.artist')
           
-          featuredmain.innerHTML = `
-          <section class="main_section">
-          <h1 class="section__h1">Featured</h1>
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[0].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[0].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-      </figure>
+    //       artist.innerHTML = 
+    //       `<section class="main_section">
+    //       <h1 class="section__h1">All Artist</h1>
+    //       <div class="section__p-wrapper">
+    //       <p class="section__p">artist of the month</p> 
+    //       <p class="section__p2"> View all</p>
+    //   </div>
+    //   <figure class="img__wrapper">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
+    //       <h3 class="figure__h3">September</h3>
+    //       <h2 class="figure__h2">Jonas Brothers</h2>
+    //   </figure>
+    //   <div class="section__p-wrapper">
+    //       <p class="section__p">artist of the month</p> 
+    //       <p class="section__p2"> View all</p>
+    //   </div>
+      
+    //   </section>
 
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[1].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[1].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-      </figure>
 
-      <figure class="img__wrapper">
-      <img class="section__img" src="${req.playlists.items[2].images[0].url}" alt="">
-          <h1 class="img__h1">${req.playlists.items[2].name}</h1>
-          <h3 class="img__h3">Soundtrack</h3>
-        </figure>
 
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[3].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[3].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
+    //   <section class="img__wrapper2">
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>Aesop Rock</figcaption>
+    //       </figure>
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>ONE OK RO.</figcaption>
+    //       </figure>
+    //       <figure>
+    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
+    //           <figcaption>PnB Rock</figcaption>
+    //       </figure>
+    //   </section>
 
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[4].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[4].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
 
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[5].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[5].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
+    //   <section>
+    //       <h1>Top Artist By Country</h1>
+    //       <figure class="div__wrapper">
+    //           <div class="green">
+    //               <h2 class="green__div-h2">Top 50</h2>
+    //               <br>
+    //               <p class="div-p">us-uk</p>
+    //           </div>
+    //           <div class="blue">
+    //               <h2 class="blue__div-h2">Top 50</h2>
+    //               <p class="div-p">Global</p class="div-p">
+    //           </div>
+    //       </figure>
+    //   </section>
+    //       `
 
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[6].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[6].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[7].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[7].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[8].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[8].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
-
-          </figure>
-          <figure class="img__wrapper">
-          <img class="section__img" src="${req.playlists.items[9].images[0].url}" alt="">
-              <h1 class="img__h1">${req.playlists.items[9].name}</h1>
-              <h3 class="img__h3">Soundtrack</h3>
-          </figure>
+    //            })
+    //        });
     
-          
-      </section>
-          `
-
-               })
-           });
+        
+})
+});

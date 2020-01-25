@@ -1,7 +1,7 @@
 <%- include('../partials/albumshead'); %>
 <%- include('../partials/header'); %>
 <%- include('../partials/nav'); %>
-<main>
+<main class="mainalbums">
     <section class="main_section">
         <h1 class="section__h1">All Artist</h1>
         <div class="section__p-wrapper">
@@ -9,57 +9,46 @@
         <p class="section__p2"> View all</p>
     </div>
     <figure class="img__wrapper">
-        <img class="section__img" src="/assets/images/feature1.png" alt="">
-        <img class="section__img" src="/assets/images/feature1.png" alt="">
-        <img class="section__img" src="/assets/images/feature1.png" alt="">
         <h3 class="figure__h3">September</h3>
-        <h2 class="figure__h2">Jonas Brothers</h2>
-    </figure>
+                <h2 class="figure__h2">Jonas Brothers</h2>
+        </figure>
+
     <div class="section__p-wrapper">
         <p class="section__p">artist of the month</p> 
         <p class="section__p2"> View all</p>
     </div>
 
-    <article class="section__wrapper-album">
-        <section class="article__section-album">
-            <a href="/albumsdetails.html">
-
-                <img class="section__img-album" src="/assets/images/feature1.png" alt="">
-            </a>
-           <div class="section__div-album">
-                <h3 class="section__div-h3-album">bhh</h3>
-                <p class="section__div-p-album">jnf</p>
-           </div>
-            <p class="section__div-p2-album">12 songs</p>
-        </section>
-        <section class="article__section-album">
-            <img class="section__img-album" src="/assets/images/feature1.png" alt="">
-           <div class="section__div-album">
-                <h3 class="section__div-h3-album">bhh</h3>
-                <p class="section__div-p-album">jnf</p>
-           </div>
-            <p class="section__div-p2-album">12 songs</p>
-        </section>
-        <section class="article__section-album">
-            <img class="section__img-album" src="/assets/images/feature1.png" alt="">
-           <div class="section__div">
-                <h3 class="section__div-h3-album">bhh</h3>
-                <p class="section__div-p-album">jnf</p>
-           </div>
-            <p class="section__div-p2-album">12 songs</p>
-        </section>
-        <section class="article__section-album">
-            <img class="section__img-album" src="/assets/images/feature1.png" alt="">
-           <div class="section__div">
-                <h3 class="section__div-h3-album">bhh</h3>
-                <p class="section__div-p-album">jnf</p>
-           </div>
-            <p class="section__div-p2-album">12 songs</p>
-        </section>
+     <article class="section__wrapper-album">
+    
        
         
     </article>
-
+ 
 </main>
+<template id="template-feature">
+   
+    <img class="section__img" src="" alt="">
+    <img class="section__img" src="" alt="">
+    <img class="section__img" src="" alt="">
+    <h3 class="figure__h3">September</h3>
+    <h2 class="figure__h2">Jonas Brothers</h2>
+
+</template> 
+<template id="template-albums">
+    <section class="article__section-album">
+    <a href="/albumsdetails.html">
+
+        <img class="section__img-album" src="" alt="">
+    </a>
+       <div class="section__div">
+            <h3 class="section__div-h3-album">bhh</h3>
+            <p class="section__div-p-album">jnf</p>
+       </div>
+        <p class="section__div-p2-album">12 songs</p>
+        </section>
+    
+
+</template>
+<script src="/assets/javascript/albums.js"></script>
 <%- include('../partials/footer'); %>
 <%- include('../partials/after-footer'); %>
