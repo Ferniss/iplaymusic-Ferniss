@@ -1,9 +1,18 @@
-body{
-    background-color: #341931;
-    margin: 0;
-    padding: 0;
+$dark-color: #341931;
+$light-color: #FFFFFF;
+
+.dark-mode {
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+.light-mode {
+  background-color: $light-color;
+  color: $dark-color;
+ 
 }
 img{
     width: 100px;
 }
+
 

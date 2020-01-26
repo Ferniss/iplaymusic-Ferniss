@@ -1,7 +1,10 @@
-body {
+.dark-mode {
   background-color: #341931;
-  margin: 0;
-  padding: 0; }
+  color: #FFFFFF; }
+
+.light-mode {
+  background-color: #FFFFFF;
+  color: #341931; }
 
 img {
   width: 100px; }
