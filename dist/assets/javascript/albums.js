@@ -43,10 +43,12 @@ fetch('https://accounts.spotify.com/api/token', {
   }).then(function (req) {
     console.log(req.albums.items[0]);
     req.albums.items.forEach(function (elementt) {
+      console.log(elementt.id);
       var templatealbums = document.querySelector('#template-albums');
       var placer2 = document.querySelector('.section__wrapper-album');
       var clone = templatealbums.content.cloneNode(true);
       clone.querySelector('.section__img-album').src = elementt.images[0].url;
+      clone.querySelector('.a-tag').href = "/albumsdetails.html?album=".concat(elementt.id);
       clone.querySelector('.section__div-h3-album').innerText = elementt.name;
       clone.querySelector('.section__div-p-album').innerText = elementt.artists[0].name;
       clone.querySelector('.section__div-p2-album').innerText = elementt.total_tracks;

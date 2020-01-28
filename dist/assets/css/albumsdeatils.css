@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.topbox {
+  height: 400px;
+  width: 100%;
+  background-image: url("./../images/pexels-photo-1771305.svg"); }
+
+.playlist_li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.pølse {
+  width: 20%;
+  height: 20%; }
+
+.album_h2 {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 7%;
+  padding-top: 6%; }
+
+.album_h4 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0;
+  padding-left: 7%; }
+
+.album_genre__p {
+  font-weight: bolder;
+  color: white;
+  padding-left: 7%;
+  margin-top: 50%;
+  margin-bottom: 0; }
+
+.albumtags_section {
+  display: flex;
+  height: 70px;
+  margin-left: 7%;
+  align-items: center; }
+
+.albumtags_cell {
+  margin: 0 5% 0 0;
+  padding: 0; }
+
+.albumtags_h4 {
+  padding: 10px 10px 10px 10px;
+  background-color: #FF1168;
+  border-radius: 20px;
+  margin: 0;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8em; }
