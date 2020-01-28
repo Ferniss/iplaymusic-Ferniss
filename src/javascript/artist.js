@@ -1,12 +1,13 @@
 const ClientID = "bfd3186986c944c1960a4d630977a810";
 const ClientSecret = "dc145f038e95439daec2d3c566f946c6";
 const key = btoa(ClientID + ":" + ClientSecret)
+
 console.log(key);
 fetch('https://accounts.spotify.com/api/token', {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": "Basic YmZkMzE4Njk4NmM5NDRjMTk2MGE0ZDYzMDk3N2E4MTA6ZGMxNDVmMDM4ZTk1NDM5ZGFlYzJkM2M1NjZmOTQ2YzY="
+            "Authorization": "Basic NzI2ZjE5OTNmYjAzNDg0NDhhM2U5OWNlODBlY2ExYTQ6MTFjNjY1NDkyYzQzNDM4Zjg5NmRkMjVmZmRiMzIyMmM="
         },
         body: "grant_type=client_credentials"
     })
@@ -15,7 +16,7 @@ fetch('https://accounts.spotify.com/api/token', {
     )
     .then(data=>{
         let accessToken = data.access_token
-        fetch('https://api.spotify.com/v1/artists?ids=0oSGxfWSnnOXhD2fKuz2Gy%2C3dBVyJ7JuOMt4GE9607Qin%2C7dGJo4pcD2V6oG8kP0tJRR',{
+        fetch('https://api.spotify.com/v1/artists?ids=0oSGxfWSnnOXhD2fKuz2Gy,3dBVyJ7JuOMt4GE9607Qin,7dGJo4pcD2V6oG8kP0tJRR,0CEFCo8288kQU7mJi25s6E,2ZbyyCS8KLKsuoNlxc76Ev',{
             method: "GET",
             headers: {
                 "Authorization" : "Bearer " + accessToken
@@ -34,70 +35,24 @@ fetch('https://accounts.spotify.com/api/token', {
             
             
           });
-    //     .then(res=> res.json())
-    //     .then(req=>{
-    //       console.log(req.artists) 
-    //     //   console.log(req.playlists.items[0].name) 
-    //       const artist = document.querySelector('.artist')
           
-    //       artist.innerHTML = 
-    //       `<section class="main_section">
-    //       <h1 class="section__h1">All Artist</h1>
-    //       <div class="section__p-wrapper">
-    //       <p class="section__p">artist of the month</p> 
-    //       <p class="section__p2"> View all</p>
-    //   </div>
-    //   <figure class="img__wrapper">
-    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
-    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
-    //       <img class="section__img" src="/assets/images/feature1.png" alt="">
-    //       <h3 class="figure__h3">September</h3>
-    //       <h2 class="figure__h2">Jonas Brothers</h2>
-    //   </figure>
-    //   <div class="section__p-wrapper">
-    //       <p class="section__p">artist of the month</p> 
-    //       <p class="section__p2"> View all</p>
-    //   </div>
-      
-    //   </section>
-
-
-
-    //   <section class="img__wrapper2">
-    //       <figure>
-    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
-    //           <figcaption>Aesop Rock</figcaption>
-    //       </figure>
-    //       <figure>
-    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
-    //           <figcaption>ONE OK RO.</figcaption>
-    //       </figure>
-    //       <figure>
-    //           <img class="img__1" src="/assets/images/feature1.png" alt="">
-    //           <figcaption>PnB Rock</figcaption>
-    //       </figure>
-    //   </section>
-
-
-    //   <section>
-    //       <h1>Top Artist By Country</h1>
-    //       <figure class="div__wrapper">
-    //           <div class="green">
-    //               <h2 class="green__div-h2">Top 50</h2>
-    //               <br>
-    //               <p class="div-p">us-uk</p>
-    //           </div>
-    //           <div class="blue">
-    //               <h2 class="blue__div-h2">Top 50</h2>
-    //               <p class="div-p">Global</p class="div-p">
-    //           </div>
-    //       </figure>
-    //   </section>
-    //       `
-
-    //            })
-    //        });
-    
-        
-})
+        })
+        fetch('https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US',{
+            method: "GET",
+            headers: {
+                "Authorization" : "Bearer " + accessToken
+            }
+        })
+        .then(res=> res.json())
+        .then(req=>{
+          console.log(req.tracks[0]) 
+          req.tracks.forEach(element => {
+            const templatealbums = document.querySelector('#template2');
+            const placer2 = document.querySelector('.img__wrapper2');
+            const clone = templatealbums.content.cloneNode(true)
+              clone.querySelector('.img__1').src = element.album.images[0].url
+              clone.querySelector(".figcaption_text").innerText = element.album.name;
+              placer2.appendChild(clone)
+  });
 });
+    });

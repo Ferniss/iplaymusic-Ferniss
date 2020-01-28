@@ -15,7 +15,7 @@ fetch('https://accounts.spotify.com/api/token', {
   return response.json();
 }).then(function (data) {
   var accessToken = data.access_token;
-  fetch('https://api.spotify.com/v1/artists?ids=0oSGxfWSnnOXhD2fKuz2Gy,3dBVyJ7JuOMt4GE9607Qin,7dGJo4pcD2V6oG8kP0tJRR,0CEFCo8288kQU7mJi25s6E,2ZbyyCS8KLKsuoNlxc76Ev', {
+  fetch('https://api.spotify.com/v1/browse/featured-playlists?country=SE&limit=2', {
     method: "GET",
     headers: {
       "Authorization": "Bearer " + accessToken
@@ -23,17 +23,17 @@ fetch('https://accounts.spotify.com/api/token', {
   }).then(function (res) {
     return res.json();
   }).then(function (req) {
-    console.log(req.artists);
-    req.artists.forEach(function (element) {
+    console.log(req.playlists);
+    req.playlists.items.forEach(function (element) {
       console.log(element.images);
-      var templatefeature = document.querySelector('#template-feature');
-      var placer = document.querySelector('.img__wrapper');
+      var templatefeature = document.querySelector('#playlists-template');
+      var placer = document.querySelector('.section__section');
       var clone = templatefeature.content.cloneNode(true);
-      clone.querySelector('.section__img').src = element.images[0].url;
+      clone.querySelector('.img__section').src = element.images[0].url;
       placer.appendChild(clone);
     });
   });
-  fetch('https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_tracks=0c6xIDDpzE81m2q797ordA&min_energy=0.4&min_popularity=50&market=US', {
+  fetch('https://api.spotify.com/v1/browse/new-releases?country=Dk', {
     method: "GET",
     headers: {
       "Authorization": "Bearer " + accessToken
@@ -41,13 +41,15 @@ fetch('https://accounts.spotify.com/api/token', {
   }).then(function (res) {
     return res.json();
   }).then(function (req) {
-    console.log(req.tracks[0]);
-    req.tracks.forEach(function (element) {
-      var templatealbums = document.querySelector('#template2');
-      var placer2 = document.querySelector('.img__wrapper2');
-      var clone = templatealbums.content.cloneNode(true);
-      clone.querySelector('.img__1').src = element.album.images[0].url;
-      clone.querySelector(".figcaption_text").innerText = element.album.name;
+    console.log(req.albums.items[0]);
+    req.albums.items.forEach(function (element) {
+      var templateplaylist = document.querySelector('#featured-playlists');
+      var placer2 = document.querySelector('.section__wrapper-album');
+      var clone = templateplaylist.content.cloneNode(true);
+      clone.querySelector('.section__img').src = element.images[0].url;
+      clone.querySelector('.section__div-p2-album').innerText = element.total_tracks;
+      clone.querySelector('.section__div-h3-album').innerText = element.name;
+      clone.querySelector('.section__div-p-album').innerText = element.artists[0].name;
       placer2.appendChild(clone);
     });
   });

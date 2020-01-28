@@ -1,5 +1,5 @@
 main {
-  background-image: url("./../images/sound-wave-3_160.png");
+  background-image: url("./../images/sound-wave-3.png");
   height: 100%; }
 
 .main__figure {
@@ -7,9 +7,13 @@ main {
   display: flex;
   justify-content: center; }
 
+.main__section {
+  height: 31em; }
+
 .main__figure-img {
   width: 17.5em;
-  height: 17.5em; }
+  height: 17.5em;
+  margin-top: 7em; }
 
 .h2__wrapper {
   display: flex;
@@ -24,8 +28,10 @@ main {
   color: white; }
 
 .img__wrapper {
-  width: 90%;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  height: 2em; }
 
 .play__section {
   display: flex;
