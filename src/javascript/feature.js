@@ -27,10 +27,10 @@ fetch('https://accounts.spotify.com/api/token', {
           req.playlists.items.forEach(element => {
               console.log(element.images)
               const templatefeature = document.querySelector('#template-feature');
-              const placer = document.querySelector('.main_section');
+              const placer = document.querySelector('.feature_section');
               const clone = templatefeature.content.cloneNode(true)
 
-                clone.querySelector('.section__img').src = element.images[0].url
+                clone.querySelector('.featuresection__img').src = element.images[0].url
                 clone.querySelector('.a-tag').href = `/albumsdetails.html?album=${element.id}`
                 placer.appendChild(clone)
             

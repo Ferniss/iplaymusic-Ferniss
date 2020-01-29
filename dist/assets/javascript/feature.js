@@ -27,9 +27,9 @@ fetch('https://accounts.spotify.com/api/token', {
     req.playlists.items.forEach(function (element) {
       console.log(element.images);
       var templatefeature = document.querySelector('#template-feature');
-      var placer = document.querySelector('.main_section');
+      var placer = document.querySelector('.feature_section');
       var clone = templatefeature.content.cloneNode(true);
-      clone.querySelector('.section__img').src = element.images[0].url;
+      clone.querySelector('.featuresection__img').src = element.images[0].url;
       clone.querySelector('.a-tag').href = "/albumsdetails.html?album=".concat(element.id);
       placer.appendChild(clone);
     });
