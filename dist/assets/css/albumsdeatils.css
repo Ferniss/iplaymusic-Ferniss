@@ -50,3 +50,17 @@
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 0.8em; }
+
+.spinner {
+  width: 5em;
+  height: 5em;
+  border: 10px solid;
+  border-image-source: linear-gradient(45deg, #8f6200, #42f7fa);
+  border-image-slice: 1;
+  border-radius: 50%;
+  animation: spinner 3s linear infinite;
+  margin: auto; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }

@@ -13,6 +13,7 @@ fetch('https://accounts.spotify.com/api/token', {
 }).then(function (response) {
   return response.json();
 }).then(function (data) {
+  document.querySelector('main').removeChild(document.querySelector('.spinner'));
   var accessToken = data.access_token;
   var album = new URLSearchParams(document.location.search).get("album");
   fetch("https://api.spotify.com/v1/albums/".concat(album, "/tracks?"), {

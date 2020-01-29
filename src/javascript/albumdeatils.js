@@ -15,6 +15,7 @@ fetch('https://accounts.spotify.com/api/token', {
     response=> response.json()
     )
     .then(data=>{
+        document.querySelector('main').removeChild(document.querySelector('.spinner'))
         let accessToken = data.access_token
         let album = new URLSearchParams(document.location.search).get("album");
         fetch(`https://api.spotify.com/v1/albums/${album}/tracks?`,{
@@ -39,9 +40,13 @@ fetch('https://accounts.spotify.com/api/token', {
                 placer.appendChild(clone)
                 
             })
+            
         });
+        
 
     });
+    
+
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
