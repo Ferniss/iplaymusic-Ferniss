@@ -26,10 +26,10 @@ fetch('https://accounts.spotify.com/api/token', {
     console.log(req.artists);
     req.artists.forEach(function (element) {
       console.log(element.images);
-      var templatefeature = document.querySelector('#template-feature');
-      var placer = document.querySelector('.img__wrapper');
+      var templatefeature = document.querySelector('#template-artist');
+      var placer = document.querySelector('.artistimg__wrapper');
       var clone = templatefeature.content.cloneNode(true);
-      clone.querySelector('.section__img').src = element.images[0].url;
+      clone.querySelector('.artistsection__img').src = element.images[0].url;
       placer.appendChild(clone);
     });
   });
@@ -43,11 +43,11 @@ fetch('https://accounts.spotify.com/api/token', {
   }).then(function (req) {
     console.log(req.tracks[0]);
     req.tracks.forEach(function (element) {
-      var templatealbums = document.querySelector('#template2');
-      var placer2 = document.querySelector('.img__wrapper2');
+      var templatealbums = document.querySelector('#template-artist2');
+      var placer2 = document.querySelector('.artistimg__wrapper2');
       var clone = templatealbums.content.cloneNode(true);
-      clone.querySelector('.img__1').src = element.album.images[0].url;
-      clone.querySelector(".figcaption_text").innerText = element.album.name;
+      clone.querySelector('.artistimg__1').src = element.album.images[0].url;
+      clone.querySelector(".artistfigcaption_text").innerText = element.album.name;
       placer2.appendChild(clone);
     });
   });

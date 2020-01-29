@@ -27,10 +27,10 @@ fetch('https://accounts.spotify.com/api/token', {
           console.log(req.artists) 
           req.artists.forEach(element => {
               console.log(element.images)
-              const templatefeature = document.querySelector('#template-feature');
-              const placer = document.querySelector('.img__wrapper');
+              const templatefeature = document.querySelector('#template-artist');
+              const placer = document.querySelector('.artistimg__wrapper');
               const clone = templatefeature.content.cloneNode(true)
-                clone.querySelector('.section__img').src = element.images[0].url
+                clone.querySelector('.artistsection__img').src = element.images[0].url
                 placer.appendChild(clone)
             
             
@@ -47,11 +47,11 @@ fetch('https://accounts.spotify.com/api/token', {
         .then(req=>{
           console.log(req.tracks[0]) 
           req.tracks.forEach(element => {
-            const templatealbums = document.querySelector('#template2');
-            const placer2 = document.querySelector('.img__wrapper2');
+            const templatealbums = document.querySelector('#template-artist2');
+            const placer2 = document.querySelector('.artistimg__wrapper2');
             const clone = templatealbums.content.cloneNode(true)
-              clone.querySelector('.img__1').src = element.album.images[0].url
-              clone.querySelector(".figcaption_text").innerText = element.album.name;
+              clone.querySelector('.artistimg__1').src = element.album.images[0].url
+              clone.querySelector(".artistfigcaption_text").innerText = element.album.name;
               placer2.appendChild(clone)
   });
 });

@@ -15,7 +15,7 @@
 .section__p2{
     color: #FF1168;
 }
-.section__img{
+.artistsection__img{
     width: 300px;
 }
 .figure__h3{
@@ -33,7 +33,7 @@
     color: #FF1168;
     font-weight: bold;
 }
-.img__wrapper{
+.artistimg__wrapper{
     height: 200px;
     width: 100%;
     display: flex;
@@ -41,7 +41,7 @@
     direction: ltr;
     margin: auto;
 }
-.img__1{
+.artistimg__1{
     border-radius: 50%;
     margin: 0.455em;
     width: 4em;
@@ -62,7 +62,7 @@
     margin-bottom: 50px;
     border-radius: 0.3em;  
 }
-.img__wrapper2{
+.artistimg__wrapper2{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -73,27 +73,28 @@
   figure{
       margin: 0px;
   }
-  figcaption{
+  .artistfigcaption_text{
       color: white;
       font-size: 15px;
   }
-  .div__wrapper{
+  .artistfigure__wrapper{
       display: flex;
       justify-content: space-between;
       width: 90%;
       margin: auto;
   }
-  .blue__div-h2{
+  .artistblue__div-h2{
       font-weight: bold;
-      color: white;
-      
+      padding-top: 45px;
+      text-align: center;
   }
-  .green__div-h2{
+  .artistgreen__div-h2{
     font-weight: bold;
-    color: white;
-   
+    padding-top: 45px;
+   text-align: center;
     
 }
-.div-p{
-    color: white;
+.artistdiv-p{
+    
+    text-align: center;
 }
