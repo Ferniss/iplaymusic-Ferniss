@@ -37,3 +37,19 @@ main {
   display: flex;
   justify-content: center;
   margin: 10%; }
+
+.buttonplayer {
+  height: 30px;
+  position: relative; }
+
+.playerbutton {
+  position: absolute;
+  z-index: 3;
+  height: 25px;
+  margin: auto;
+  left: 5px;
+  right: 0; }
+
+audio {
+  margin-top: 1em;
+  margin-left: 9%; }
