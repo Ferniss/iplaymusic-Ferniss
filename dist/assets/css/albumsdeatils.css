@@ -3,7 +3,7 @@
   width: 100%;
   background-image: url("./../images/pexels-photo-1771305.svg"); }
 
-.playlist_li {
+.albumdetails_figure {
   display: flex;
   justify-content: space-between;
   align-items: center; }
