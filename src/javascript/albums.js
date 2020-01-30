@@ -1,3 +1,4 @@
+alert("Reload siden")
 const ClientID = "bfd3186986c944c1960a4d630977a810";
 const ClientSecret = "dc145f038e95439daec2d3c566f946c6";
 const key = btoa(ClientID + ":" + ClientSecret)
