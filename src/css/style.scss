@@ -1,3 +1,9 @@
+#iconwhite1{
+  color: #FFFFFF;
+}
+#iconwhite2{
+  color: #FFFFFF;
+}
 $dark-color: #341931;
 $light-color: #FFFFFF;
 
@@ -25,6 +31,7 @@ $light-color: #FFFFFF;
   footer{
     background-color: $dark-color;
   }
+  
 }
 
 .light-mode {
@@ -50,6 +57,12 @@ $light-color: #FFFFFF;
   }
   footer{
     background-color: $light-color;
+  }
+  #iconwhite1{
+    color: $dark-color;
+  }
+  #iconwhite2{
+    color: $dark-color;
   }
 }
 

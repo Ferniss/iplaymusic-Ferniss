@@ -1,3 +1,9 @@
+#iconwhite1 {
+  color: #FFFFFF; }
+
+#iconwhite2 {
+  color: #FFFFFF; }
+
 .dark-mode {
   background-color: #341931; }
   .dark-mode p {
@@ -31,3 +37,7 @@
     color: #341931; }
   .light-mode footer {
     background-color: #FFFFFF; }
+  .light-mode #iconwhite1 {
+    color: #341931; }
+  .light-mode #iconwhite2 {
+    color: #341931; }
