@@ -26,7 +26,7 @@ fetch('https://accounts.spotify.com/api/token', {
     console.log(req.albums);
     req.albums.forEach(function (element) {
       console.log(element.images);
-      var templatefeature = document.querySelector('#template-feature');
+      var templatefeature = document.querySelector('#template-albums');
       var placer = document.querySelector('.img__wrapper');
       var clone = templatefeature.content.cloneNode(true);
       clone.querySelector('.section__img').src = element.images[0].url;
@@ -44,7 +44,7 @@ fetch('https://accounts.spotify.com/api/token', {
     console.log(req.albums.items[0]);
     req.albums.items.forEach(function (elementt) {
       console.log(elementt.id);
-      var templatealbums = document.querySelector('#template-albums');
+      var templatealbums = document.querySelector('#template-albums2');
       var placer2 = document.querySelector('.section__wrapper-album');
       var clone = templatealbums.content.cloneNode(true);
       clone.querySelector('.section__img-album').src = elementt.images[0].url;
