@@ -4,6 +4,20 @@
 #iconwhite2 {
   color: #FFFFFF; }
 
+.frame {
+  width: 360px;
+  height: 640px;
+  border: none;
+  /* Reset default border */ }
+
+@media (max-width: 415px) and (max-height: 825px) {
+  .frame {
+    display: block;
+    /* iframes are inline by default */
+    height: 100vh;
+    /* Viewport-relative units */
+    width: 100vw; } }
+
 .dark-mode {
   background-color: #341931; }
   .dark-mode p {

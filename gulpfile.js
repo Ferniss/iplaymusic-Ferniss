@@ -25,7 +25,7 @@ function watchHtml(done){
 function scss(done) {
     gulp.src("src/css/**/*.scss")
         .pipe(sass().on("error", err => console.log(err)))
-        .pipe(gulp.dest("dist/assets/css"))
+        .pipe(gulp.dest("docs/assets/css"))
         .pipe(connect.reload());
     done();
 }
@@ -36,7 +36,7 @@ function watchScss() {
 function images(done) {
     gulp.src("./src/images/*")
         .pipe(imagemin())
-        .pipe(gulp.dest("./dist/assets/images"))
+        .pipe(gulp.dest("./docs/assets/images"))
         .pipe(connect.reload());
     done();
 }
@@ -49,7 +49,7 @@ function javascript(done) {
         .pipe(babel({
             presets: ["@babel/env"]
         }))
-        .pipe(gulp.dest("./dist/assets/javascript"))
+        .pipe(gulp.dest("./docs/assets/javascript"))
         .pipe(connect.reload());
     done();
 }
@@ -64,7 +64,7 @@ gulp.task("dev", function(done){
     watchJavascript();
     connect.server({
         livereload: true,
-        root: "dist"
+        root: "docs"
     })
     done();
 });
@@ -72,7 +72,7 @@ gulp.task("build", function(done) {
     html(done);
     scss(done);
     javascript(done);
-    json(done);
+    // json(done);
     images(done);
     done();
 });
