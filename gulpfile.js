@@ -72,7 +72,7 @@ gulp.task("build", function(done) {
     html(done);
     scss(done);
     javascript(done);
-    json(done);
+    // json(done);
     images(done);
     done();
 });
