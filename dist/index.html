@@ -22,7 +22,7 @@
         width: 100vw;
     }
 </style>
-<iframe src="./index_real.html" class="frame" frameborder="0"></iframe>
+<iframe src="./frontpage.html" class="frame" frameborder="0"></iframe>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/7.8.0/firebase-app.js"></script>
 
@@ -32,5 +32,10 @@
 
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
+<script>
+    if (window.innerWidth < 425) {
+        window.location.href = "frontpage.html"
+    }
+</script>
 </body>
 </html>
