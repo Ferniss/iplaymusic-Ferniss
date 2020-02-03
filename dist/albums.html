@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/albums.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+<header class="header__header">
+    <div class="header__wrapper">
+    <i class="fas fa-chevron-left" id="iconwhite1"></i>
+    <p class="Header__p">text</p>
+    <i class="fas fa-search" id="iconwhite2"></i>
+    </div>
+</header>
+
+<main class="mainalbums">
+    <section class="main_section">
+        <h1 class="section__h1">All albums</h1>
+        <div class="section__p-wrapper">
+        <p class="section__p">Featured albums</p> 
+        <p class="section__p2"> View all</p>
+    </div>
+    <figure class="img__wrapper">
+        <!-- <h3 class="figure__h3">September</h3>
+                <h2 class="figure__h2">Jonas Brothers</h2> -->
+        </figure>
+
+    <div class="section__p-wrapper">
+        <p class="section__p">new realeases</p> 
+        <p class="section__p2"> View all</p>
+    </div>
+
+     <article class="section__wrapper-album">
+    
+       
+        
+    </article>
+ 
+</main>
+<template id="template-albums">
+   
+    <img class="section__img" src="" alt="">
+    <img class="section__img" src="" alt="">
+    <img class="section__img" src="" alt="">
+    <!-- <h3 class="figure__h3">September</h3>
+    <h2 class="figure__h2">Jonas Brothers</h2> -->
+
+</template> 
+<template id="template-albums2">
+    <section class="article__section-album">
+    <a href="/albumsdetails.html" class="a-tag">
+
+        <img class="section__img-album" src="" alt="">
+    </a>
+       <div class="section__div">
+            <h3 class="section__div-h3-album"></h3>
+            <p class="section__div-p-album"></p>
+       </div>
+        <p class="section__div-p2-album"></p>
+        </section>
+    
+
+</template>
+<script src="/assets/javascript/albums.js"></script>
+<footer>
+    <a href="/artist.html">
+        <i class="fas fa-heartbeat"></i>
+    </a>
+
+    <a href="/albums.html">
+        <i class="fas fa-microphone-alt"></i>
+    </a>
+
+    <a href="/frontpage.html">
+        <i class="fas fa-music"></i>
+    </a>
+
+
+    <i class="fas fa-adjust" id="lightdark" onclick="toggleDarkLight()"></i>
+
+<a href="/playlist.html">
+    <i class="fas fa-cog"></i>
+</a>
+</footer>
+</body>
+<script src="/assets/javascript/lightdark.js"></script>
+</html>
