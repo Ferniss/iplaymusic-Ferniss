@@ -1,6 +1,5 @@
 "use strict";
 
-alert("Reload siden");
 var ClientID = "bfd3186986c944c1960a4d630977a810";
 var ClientSecret = "dc145f038e95439daec2d3c566f946c6";
 var key = btoa(ClientID + ":" + ClientSecret);
